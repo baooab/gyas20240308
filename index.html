@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
+    <meta name="full-screen" content="yes" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="browsermode" content="application" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>工银安盛人寿</title>
+    
+    <link
+    rel="preload"
+    href="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/bg_loading.jpg" as="image" type="image/jpeg" />
+    <link
+    rel="preload"
+    href="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/loading.gif" as="image" type="image/gif" />
+    <link
+    rel="preload"
+    href="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/board.png" as="image" type="image/png" />
+    <link
+    rel="preload"
+    href="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/poster.png" as="image" type="image/png" />
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js" ></script>
+    <script>
+      function isDebug() {
+        return window.location.search.indexOf('debug') > 0;
+      }
+    
+      if (isDebug()) {
+        new window.VConsole();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+
+  </body>
+</html>

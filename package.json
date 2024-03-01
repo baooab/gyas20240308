@@ -1,0 +1,23 @@
+{
+  "name": "gyas20240308",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --base /gyas20240308",
+    "preview": "vite preview --base /gyas20240308"
+  },
+  "dependencies": {
+    "@types/video.js": "^7.3.56",
+    "@videojs-player/vue": "^1.0.0",
+    "@vueuse/core": "^10.7.0",
+    "vant": "^4.8.1",
+    "video.js": "^7.21.5",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  }
+}
