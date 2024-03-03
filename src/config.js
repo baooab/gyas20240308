@@ -9,5 +9,6 @@ export const VideoTimeBreakPoints = Object.values(VideoBreakPoints).reduce((res,
 }, {})
 
 export const AudioChangeBreakPoint = {
-  Phase2: { second: 18, src: 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/audio_02.MP3' }
+  Phase1: { second: 0, src: 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/audio/01.mp3' },
+  Phase2: { second: 18, src: 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/audio/02.mp3' }
 }

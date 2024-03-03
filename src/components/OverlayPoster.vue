@@ -1,8 +1,9 @@
 <template>
   <van-overlay :show="show">
     <div class="wrapper">
-      <img :src="selectedPoster[0]" alt="Image" draggable="false" class="image is-full">
-
+      <div :style="{ backgroundImage: 'url(' + selectedPoster[0] + ')' }" alt="Image" draggable="false"
+        class="bg-image">
+      </div>
       <div class="button-group">
         <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/save_poster.png"
           @click="showPoster = true" class="retry-button" />
@@ -10,7 +11,6 @@
           @click="handleRetry" />
       </div>
     </div>
-
   </van-overlay>
   <van-overlay :show="showPoster">
     <div class="wrapper">
@@ -39,12 +39,9 @@ const emit = defineEmits(['retry'])
 const showPoster = ref(false)
 
 const posters = ref([
-  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/pre_poster_01.jpg',
-    'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/poster_01.jpg'],
-  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/pre_poster_02.jpg',
-    'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/poster_02.jpg'],
-  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/pre_poster_03.jpg',
-    'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/poster_03.jpg']
+  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_01.png', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_01.png'],
+  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_02.png', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_02.png'],
+  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_03.png ', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_03.png'],
 ])
 
 const selectedPoster = ref([])
@@ -95,14 +92,18 @@ function handleRetry() {
   transform: translate(-50%);
 }
 
-.image.is-full {
+.bg-image {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   transform: translate(0);
-  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position-y: 60%;
   user-select: none;
+  background-color: white;
 }
 
 .button-group {

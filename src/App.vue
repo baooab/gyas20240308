@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import BgVideo from './components/BgVideo.vue'
 import BgAudio from './components/BgAudio.vue'
 import Loading from './components/Loading.vue'
@@ -19,7 +19,8 @@ const showPoster = ref(false)
 const showLoading = ref(true)
 const showButton = ref(true)
 const buttonSrc = ref('https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/board.png')
-const bgAudioSrc = ref('https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/audio_01.MP3')
+const bgAudioSrc = ref(AudioChangeBreakPoint.Phase1.src)
+
 
 function handleReady() {
   // console.log('[ready]', videoRef.value)
@@ -85,7 +86,7 @@ function handleTimeUpdate() {
 
 function handleRetry() {
   buttonSrc.value = 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/board.png'
-  bgAudioSrc.value = 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/audio_01.MP3'
+  bgAudioSrc.value = AudioChangeBreakPoint.Phase1.src
   showPoster.value = false
   readyToshowPoster.value = false
   videoRef.value.player.resetProgressBar_()
@@ -95,19 +96,20 @@ function handleRetry() {
 </script>
 
 <template>
-  <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/newest_video.mp4"
-    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/poster.png" @ready="handleReady" muted
+  <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video.mp4"
+    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleReady" muted
     ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
     :breakpoints="breakpoints" />
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
 
-  <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/newest_video_bg_audio.MP3"
+  <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video_bg_music.mp3"
     ref="videoBgAudioRef" />
 
   <ImageButton :show="showButton" @click="handlePlayOrStop" :src="buttonSrc" pos="bottom" />
 
-  <Loading :show="showLoading" bg-src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/bg_loading.jpg" />
+  <Loading :show="showLoading"
+    bg-src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/bg_loading.jpg" />
 
   <OverlayPoster :show="showPoster" @retry="handleRetry" />
 </template>
