@@ -13,7 +13,7 @@ const breakpoints = ref(Object.values(VideoBreakPoints).map(({ second }) => seco
 
 const videoRef = ref(null)
 const bgAudioRef = ref(null)
-// const videoBgAudioRef = ref(null)
+const videoBgAudioRef = ref(null)
 const readyToshowPoster = ref(false)
 const showPoster = ref(false)
 const showLoading = ref(true)
@@ -37,16 +37,16 @@ function handlePlayOrStop() {
 
   if (videoRef.value.player.paused()) {
     videoRef.value.player.play();
-    // videoBgAudioRef.value.audio.play()
+    videoBgAudioRef.value.audio.play()
   } else {
     videoRef.value.player.pause();
-    // videoBgAudioRef.value.audio.pause()
+    videoBgAudioRef.value.audio.pause()
   }
 }
 function handlePause() {
   const currTime = videoRef.value.player.currentTime()
 
-  // videoBgAudioRef.value.audio.pause()
+  videoBgAudioRef.value.audio.pause()
 
   // handle button text
   for (const compareSecond of breakpoints.value) {
@@ -66,7 +66,7 @@ function handlePause() {
 
 function handlePlay() {
   showButton.value = false
-  // videoBgAudioRef.value.audio.play()
+  videoBgAudioRef.value.audio.play()
 }
 
 function handleEnded() {
@@ -92,7 +92,7 @@ function handleRetry() {
   readyToshowPoster.value = false
   videoRef.value.player.resetProgressBar_()
   videoRef.value.reset()
-  // videoBgAudioRef.value.audio.load()
+  videoBgAudioRef.value.audio.load()
 }
 </script>
 
@@ -104,7 +104,7 @@ function handleRetry() {
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
 
-  <!-- <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video_bg_music.mp3"
+  <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video_bg_music.mp3"
     ref="videoBgAudioRef" /> -->
 
   <ImageButton :show="showButton" @click="handlePlayOrStop" :src="buttonSrc" pos="bottom" />
