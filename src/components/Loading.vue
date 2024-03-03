@@ -2,7 +2,7 @@
   <van-overlay :show="show">
     <div class="bg" :style="{ backgroundImage: 'url(' + bgSrc + ')' }">
       <div class="loading" aria-label="loading...">
-        <img src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/loading.gif" alt="loading"
+        <img src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/loading.gif" alt="loading"
           draggable="false" class="loading-img">
       </div>
     </div>

@@ -18,7 +18,7 @@ const readyToshowPoster = ref(false)
 const showPoster = ref(false)
 const showLoading = ref(true)
 const showButton = ref(true)
-const buttonSrc = ref('https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/board.png')
+const buttonSrc = ref('https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/board.png')
 const bgAudioSrc = ref(AudioChangeBreakPoint.Phase1.src)
 
 
@@ -77,6 +77,7 @@ function handleEnded() {
 function handleTimeUpdate() {
   const currTime = videoRef.value.player.currentTime()
 
+
   // is it time to change bgm?
   if (loseEqual(currTime, AudioChangeBreakPoint.Phase2.second)) {
     bgAudioSrc.value = AudioChangeBreakPoint.Phase2.src
@@ -85,7 +86,7 @@ function handleTimeUpdate() {
 }
 
 function handleRetry() {
-  buttonSrc.value = 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v2/board.png'
+  buttonSrc.value = 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/board.png'
   bgAudioSrc.value = AudioChangeBreakPoint.Phase1.src
   showPoster.value = false
   readyToshowPoster.value = false
@@ -109,7 +110,7 @@ function handleRetry() {
   <ImageButton :show="showButton" @click="handlePlayOrStop" :src="buttonSrc" pos="bottom" />
 
   <Loading :show="showLoading"
-    bg-src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/bg_loading.jpg" />
+    bg-src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/bg_loading.jpg" />
 
   <OverlayPoster :show="showPoster" @retry="handleRetry" />
 </template>

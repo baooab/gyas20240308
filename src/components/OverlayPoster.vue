@@ -5,18 +5,18 @@
         class="bg-image">
       </div>
       <div class="button-group">
-        <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/save_poster.png"
+        <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/save_poster.png"
           @click="showPoster = true" class="retry-button" />
-        <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240101/v1/retry.png" class="save-button"
-          @click="handleRetry" />
+        <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/retry.png"
+          class="save-button" @click="handleRetry" />
       </div>
     </div>
   </van-overlay>
   <van-overlay :show="showPoster">
     <div class="wrapper">
       <img :src="selectedPoster[1]" alt="Image" draggable="false" class="image">
-      <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/test/close.png" class="close-btn" pos="bottom"
-        @click="handlePoserClose" />
+      <ImageButton src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/close.png" class="close-btn"
+        pos="bottom" @click="handlePoserClose" />
     </div>
   </van-overlay>
 </template>
