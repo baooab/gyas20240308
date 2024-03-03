@@ -98,7 +98,7 @@ function handleRetry() {
 
 <template>
   <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video.mp4"
-    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleReady"
+    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleReady" muted
     ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
     :breakpoints="breakpoints" />
 
