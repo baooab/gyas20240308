@@ -1,13 +1,13 @@
 <template>
-  <div :class="['bg-audio', paused && 'paused']" tabindex="-1" @pointerdown="togglePlay" role="button" v-show="autoplay">
-  </div>
+  <!-- <div :class="['bg-audio', paused && 'paused']" tabindex="-1" @pointerdown="togglePlay" role="button" v-show="autoplay"> 
+  </div>-->
   <audio ref="audioRef" preload="auto" loop :src="src" />
 </template>
 
 <script setup>
 import { onMounted, watch, ref } from 'vue'
 import { useEventListener } from '@vueuse/core'
-const paused = ref(false)
+// const paused = ref(false)
 const audioRef = ref(null)
 
 const props = defineProps({
@@ -66,19 +66,20 @@ function tryAutoPlay() {
   }, { once: true })
 }
 
-function togglePlay() {
-  const isPaused = !paused.value
-  paused.value = isPaused
-  if (isPaused) {
-    audioRef.value.pause()
-  } else {
-    audioRef.value.play()
-  }
-}
+// function togglePlay() {
+//   const isPaused = !paused.value
+//   paused.value = isPaused
+//   if (isPaused) {
+//     audioRef.value.pause()
+//   } else {
+//     audioRef.value.play()
+//   }
+// }
 
 </script>
 
 <style scoped>
+/*
 .bg-audio {
   width: 8vw;
   height: 8vw;
@@ -104,5 +105,5 @@ function togglePlay() {
   to {
     transform: rotate(359deg)
   }
-}
+} */
 </style>
