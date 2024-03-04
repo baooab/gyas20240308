@@ -39,7 +39,7 @@ const emit = defineEmits(['retry'])
 const showPoster = ref(false)
 
 const posters = ref([
-  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_01.png', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_01.png'],
+  ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_01.jpg', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_01.jpg'],
   ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_02.png', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_02.png'],
   ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_03.png ', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_03.png'],
 ])
