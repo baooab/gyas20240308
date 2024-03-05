@@ -97,14 +97,14 @@ function handleRetry() {
 </script>
 
 <template>
-  <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video_v3.mp4"
+  <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/newest_video.mp4"
     poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleReady" muted
     ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
     :breakpoints="breakpoints" />
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
 
-  <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/video_bg_music.mp3"
+  <BgAudio src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/newest_video.mp3"
     ref="videoBgAudioRef" /> -->
 
   <ImageButton :show="showButton" @click="handlePlayOrStop" :src="buttonSrc" pos="bottom" />
