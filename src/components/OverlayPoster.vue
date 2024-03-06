@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { watch, ref, onMounted } from 'vue'
+import { watch, ref, computed } from 'vue'
 import { showToast } from 'vant'
 import ImageButton from './ImageButton.vue';
 import { getRandomNum } from '../utils'
@@ -35,8 +35,9 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['retry'])
+// const emit = defineEmits(['retry'])
 const showPoster = ref(false)
+const posterIndex = ref(getRandomNum(0, 2))
 
 const posters = ref([
   ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_01.jpg', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_01.jpg'],
@@ -44,25 +45,16 @@ const posters = ref([
   ['https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/pre_poster_03.jpg ', 'https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster_03.jpg'],
 ])
 
-const selectedPoster = ref([])
-
 // handle save tips
 watch(showPoster, (newValue) => {
-  console.log('watch', newValue)
+  // console.log('watch', newValue)
   if (newValue) {
     showToast('长按图片保存')
   }
 })
 
-onMounted(() => {
-  selectedPoster.value = posters.value[getRandomNum(0, 2)]
-})
-
-// handle poster select
-watch(() => props.show, (newValue) => {
-  if (newValue) {
-    selectedPoster.value = posters.value[getRandomNum(0, 2)]
-  }
+const selectedPoster = computed(() => {
+  return posters.value[posterIndex.value % 3]
 })
 
 function handlePoserClose() {
@@ -70,7 +62,8 @@ function handlePoserClose() {
 }
 
 function handleRetry() {
-  emit('retry')
+  // emit('retry')
+  posterIndex.value++
 }
 </script>
 
