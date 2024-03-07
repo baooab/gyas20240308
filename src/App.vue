@@ -27,6 +27,12 @@ function handleCanPlay() {
   showLoading.value = false
 }
 
+function handleCanPlayDelay() {
+  setTimeout(() => {
+    showLoading.value = false
+  }, 3000)
+}
+
 function handlePlayOrStop() {
   if (readyToshowPoster.value) {
     showPoster.value = true
@@ -96,9 +102,10 @@ function handleRetry() {
 
 <template>
   <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/newest_video.mp4"
-    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @canplay="handleCanPlay"
-    @loadeddata="handleCanPlay" @canplaythrough="handleCanPlay" muted ref="videoRef" @timeupdate="handleTimeUpdate"
-    @ended="handleEnded" @pause="handlePause" @play="handlePlay" :breakpoints="breakpoints" />
+    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleCanPlayDelay"
+    @canplay="handleCanPlay" @loadeddata="handleCanPlay" @canplaythrough="handleCanPlay" muted ref="videoRef"
+    @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
+    :breakpoints="breakpoints" />
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
 
