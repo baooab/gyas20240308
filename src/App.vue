@@ -22,11 +22,9 @@ const buttonSrc = ref('https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240
 const bgAudioSrc = ref(AudioChangeBreakPoint.Phase1.src)
 
 
-function handleReady() {
-  // console.log('[ready]', videoRef.value)
-  setTimeout(() => {
-    showLoading.value = false
-  }, 1500)
+function handleCanPlay() {
+  // console.log('[canplay]', videoRef.value)
+  showLoading.value = false
 }
 
 function handlePlayOrStop() {
@@ -98,8 +96,8 @@ function handleRetry() {
 
 <template>
   <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/newest_video.mp4"
-    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @ready="handleReady" muted
-    ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
+    poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @canplay="handleCanPlay"
+    muted ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
     :breakpoints="breakpoints" />
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
