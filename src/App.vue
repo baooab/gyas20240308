@@ -97,8 +97,8 @@ function handleRetry() {
 <template>
   <BgVideo src="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/newest_video.mp4"
     poster="https://zbbusiness.oss-cn-shanghai.aliyuncs.com/gyas20240308/assets/poster.jpg" @canplay="handleCanPlay"
-    muted ref="videoRef" @timeupdate="handleTimeUpdate" @ended="handleEnded" @pause="handlePause" @play="handlePlay"
-    :breakpoints="breakpoints" />
+    @loadeddata="handleCanPlay" @canplaythrough="handleCanPlay" muted ref="videoRef" @timeupdate="handleTimeUpdate"
+    @ended="handleEnded" @pause="handlePause" @play="handlePlay" :breakpoints="breakpoints" />
 
   <BgAudio :src="bgAudioSrc" autoplay ref="bgAudioRef" />
 
