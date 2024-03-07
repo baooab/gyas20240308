@@ -30,7 +30,7 @@ function handleCanPlay() {
 function handleCanPlayDelay() {
   setTimeout(() => {
     showLoading.value = false
-  }, 3000)
+  }, 2000)
 }
 
 function handlePlayOrStop() {

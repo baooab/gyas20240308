@@ -1,9 +1,10 @@
 <template>
   <VideoPlayer :class="['full-page-video', canplay && 'vjs-can-play']" :src="src" :poster="poster" :muted="muted"
-    playsinline webkit-playsinline @mounted="handleEvent({ type: 'mounted', ...$event })" @ready="handleEvent($event)"
-    @play="handleEvent($event)" preload="auto" @pause="handleEvent($event)" @ended="handleEnded($event)"
-    @loadeddata="handleEvent($event)" @waiting="handleEvent($event)" @playing="handleEvent($event)"
-    @canplay="handleEvent($event)" @canplaythrough="handleEvent($event)" @timeupdate="handleEvent($event)" />
+    x5-video-player-type="h5" playsinline webkit-playsinline @mounted="handleEvent({ type: 'mounted', ...$event })"
+    @ready="handleEvent($event)" @play="handleEvent($event)" preload="auto" @pause="handleEvent($event)"
+    @ended="handleEnded($event)" @loadeddata="handleEvent($event)" @waiting="handleEvent($event)"
+    @playing="handleEvent($event)" @canplay="handleEvent($event)" @canplaythrough="handleEvent($event)"
+    @timeupdate="handleEvent($event)" />
 </template>
 
 <script setup>
@@ -136,6 +137,7 @@ function reset() {
 /* fix video.js bugs */
 .full-page-video.vjs-has-started :deep([class$="poster"]) {
   display: block;
+  z-index: 1000;
 }
 
 .full-page-video.vjs-has-started.vjs-can-play :deep([class$="poster"]) {
