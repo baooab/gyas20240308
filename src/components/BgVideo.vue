@@ -58,7 +58,9 @@ defineExpose({
 })
 
 function handleEvent(event) {
-  // console.log("Basic player event", event);
+  if (event.type !== "timeupdate") {
+    console.log("Basic player event", event);
+  }
 
   if (event.type === "mounted") {
     handleMounted(event)
@@ -66,7 +68,7 @@ function handleEvent(event) {
     handleTimeUpdate(event)
   } else if (event.type === "ended") {
     handleEnded(event)
-  } else if (event.type === "canplaythrough") {
+  } else if (event.type === "canplay") {
     hanleCanPlay(event)
   }
 
